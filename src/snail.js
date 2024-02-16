@@ -11,7 +11,15 @@ function snail(arrWithNumbers) {
   console.log(arrWithNumbers[0].toString());
 
   result = arrWithNumbers[0];
-  result.push(...arrWithNumbers[1].reverse());
+
+  if (arrWithNumbers.length == 2) {
+    result.push(...arrWithNumbers[1].reverse());
+  } else {
+    result.push(arrWithNumbers[1][2]);
+    result.push(...arrWithNumbers[2].reverse());
+    result.push(arrWithNumbers[1][0]);
+    result.push(arrWithNumbers[1][1]);
+  }
   console.log(result);
   return result;
 }

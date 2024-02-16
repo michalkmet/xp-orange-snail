@@ -32,5 +32,5 @@ Anna Driver Michal Navigator
 User Story 2: 3x3 arr+
 As a user, I want to see snail function working with max 3x3+ array
 
-- ⚠ TODO UAT2.1 When I pass ([[1, 2, 3],[4, 5, 6],[7, 8, 9]]) then I want to see [1,2,3,6,9,8,7,4,5]
+- ✅ DONE UAT2.1 When I pass ([[1, 2, 3],[4, 5, 6],[7, 8, 9]]) then I want to see [1,2,3,6,9,8,7,4,5]
 - ⚠ TODO UAT2.2 When I pass ([1, 2, 3],[8, 9, 4],[7, 6, 5]) then I want to see [1,2,3,4,5,6,7,8,9]

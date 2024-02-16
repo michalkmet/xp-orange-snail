@@ -13,4 +13,4 @@ Anna Navigator Michal Driver
 
 - ✅ DONE Initial refactor
 - ✅ DONE Examples
-- ⚠ TODO User stories
+- ✅ DONE User stories

@@ -11,5 +11,6 @@
 Pomodoro 1:
 Anna Navigator Michal Driver
 
-- ⚠ TODO Initial refactor
-- ⚠ TODO Examples
+- ✅ DONE Initial refactor
+- ✅ DONE Examples
+- ⚠ TODO User stories

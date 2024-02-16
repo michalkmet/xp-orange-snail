@@ -1,5 +1,5 @@
 function snail() {
-  return 'hello';
+  return [];
 }
 
 module.exports = snail;

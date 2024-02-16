@@ -1,7 +1,7 @@
 const snail = require('./snail');
 
-describe('hello', () => {
-  it('should return hello', () => {
-    expect(snail()).toBe('hello');
+describe('User Story 1: 2x2 arr max', () => {
+  it('UAT1.1 When I pass ([[]]) then I want to see []', () => {
+    expect(snail([[]])).toStrictEqual([]);
   });
 });

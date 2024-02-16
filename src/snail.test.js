@@ -15,4 +15,13 @@ describe('User Story 1: 2x2 arr max', () => {
       ]),
     ).toStrictEqual([1, 2, 4, 3]);
   });
+
+  it('UAT1.4 When I pass ([[4, 3],[2, 1]]) then I want to see [4, 3, 1, 2]', () => {
+    expect(
+      snail([
+        [4, 3],
+        [2, 1],
+      ]),
+    ).toStrictEqual([4, 3, 1, 2]);
+  });
 });

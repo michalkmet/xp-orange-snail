@@ -10,3 +10,6 @@
 
 Pomodoro 1:
 Anna Navigator Michal Driver
+
+- ⚠ TODO Initial refactor
+- ⚠ TODO Examples

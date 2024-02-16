@@ -1,7 +1,7 @@
-const hello = require('./hello');
+const snail = require('./snail');
 
 describe('hello', () => {
   it('should return hello', () => {
-    expect(hello()).toBe('hello');
+    expect(snail()).toBe('hello');
   });
 });

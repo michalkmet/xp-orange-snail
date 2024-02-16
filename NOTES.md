@@ -26,7 +26,7 @@ Pomodoro 2:
 Anna Driver Michal Navigator
 
 - ✅ DONE UAT1.4 When I pass ([[4, 3],[2, 1]]) then I want to see [4, 3, 1, 2]
-- ⚠ TODO UAT1.5 When I pass ([[7, 8],[9, 10]]) then I want to see [7, 8, 10, 9]
+- ✅ DONE UAT1.5 When I pass ([[7, 8],[9, 10]]) then I want to see [7, 8, 10, 9]
 - ⚠ TODO UAT1.6 When I pass ([[1, 5],[2, 8]]) then I want to see [1, 5, 8, 2]
 
 User Story 2: 3x3 arr+

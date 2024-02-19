@@ -21,4 +21,4 @@ As a user, I want to see snail function working with max 3x3+ array
 
 - ⚠ TODO UAT2.1 When I pass ([[1, 2, 3],[4, 5, 6],[7, 8, 9]]) then I want to see [1,2,3,6,9,8,7,4,5]
 - ⚠ TODO UAT2.2 When I pass ([1, 2, 3],[8, 9, 4],[7, 6, 5]) then I want to see [1,2,3,4,5,6,7,8,9]
-- ⚠ TODO UAT2.2 When I pass ([1,2,3,1],[4,5,6,4],[7,8,9,7],[7,8,9,7]) then I want to see [1,2,3,1,4,7,7,9,8,7,7,4,5,6,9,8]
+- ⚠ TODO UAT2.2 When I pass ([1,2,3,1],[4,5,6,4],[7,8,9,7],[10,11,12,10]) then I want to see [1,2,3,1,4,7,10, 12, 11, 10, 7, 4, 5, 6, 9, 8]

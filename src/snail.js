@@ -1,6 +1,6 @@
 function snail(arrWithNumbers) {
   let result = [];
-  const howManyArrs = arrWithNumbers.length;
+  let howManyArrs = arrWithNumbers.length;
   console.log('arrWithNumbers: ', arrWithNumbers);
 
   if (checkEmptyOr1Element(arrWithNumbers)) {
@@ -9,20 +9,29 @@ function snail(arrWithNumbers) {
 
   // first row
   result = arrWithNumbers[0];
+  const modifiedArr = arrWithNumbers.slice(1);
+  console.log('modifiedArr:', modifiedArr);
+
   if (howManyArrs === 2) {
     result.push(...arrWithNumbers[howManyArrs - 1].reverse());
   } else {
-    for (let i = 1; i < arrWithNumbers.length - 1; i++) {
-      let innerArr = arrWithNumbers[i];
+    for (let i = 0; i < modifiedArr.length - 1; i++) {
+      let innerArr = modifiedArr[i];
       console.log('innerArr: ', innerArr);
       result.push(innerArr[innerArr.length - 1]);
     }
 
+    howManyArrs = modifiedArr.length;
     // reverse row
-    result.push(...arrWithNumbers[howManyArrs - 1].reverse());
+    result.push(...modifiedArr[howManyArrs - 1].reverse());
+    console.log('modifiedArr before splice: ', modifiedArr);
+    const modifiedArrWithoutLastRow = modifiedArr.slice(0, modifiedArr.length - 1);
 
-    for (let j = 1; j < arrWithNumbers.length - 1; j++) {
-      let innerArr = arrWithNumbers[j];
+    console.log('modifiedArrWithoutLastRow:', modifiedArrWithoutLastRow);
+    console.log('modifiedArr:', modifiedArr);
+
+    for (let j = 0; j < modifiedArr.length - 1; j++) {
+      let innerArr = modifiedArr[j];
       console.log('innerArr2: ', innerArr);
       result.push(innerArr[0]);
       result.push(innerArr[1]);
@@ -31,7 +40,7 @@ function snail(arrWithNumbers) {
   console.log(arrWithNumbers[0].toString());
   console.log(arrWithNumbers[howManyArrs - 1].toString());
 
-  console.log(result);
+  console.log('result: ', result);
 
   // if (arrWithNumbers.length == 2) {
   //   result.push(...arrWithNumbers[1].reverse());

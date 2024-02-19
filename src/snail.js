@@ -7,49 +7,50 @@ function snail(arrWithNumbers) {
     return arrWithNumbers[0];
   }
 
-  // first row
+  // 1. first row
+  console.log('1. process first row');
   result = arrWithNumbers[0];
   const modifiedArr = arrWithNumbers.slice(1);
-  console.log('modifiedArr:', modifiedArr);
+  console.log('modifiedArr after 1 step:', modifiedArr);
 
   if (howManyArrs === 2) {
     result.push(...arrWithNumbers[howManyArrs - 1].reverse());
   } else {
+    // 2. process right vertical line
+    console.log('2. right vertical line');
     for (let i = 0; i < modifiedArr.length - 1; i++) {
       let innerArr = modifiedArr[i];
-      console.log('innerArr: ', innerArr);
+      console.log('Arr for right vertical: ', innerArr);
       result.push(innerArr[innerArr.length - 1]);
+      innerArr.pop();
     }
 
     howManyArrs = modifiedArr.length;
-    // reverse row
+
+    // 3. reverse row
+    console.log('3. process last row, do reverse');
     result.push(...modifiedArr[howManyArrs - 1].reverse());
     console.log('modifiedArr before splice: ', modifiedArr);
-    const modifiedArrWithoutLastRow = modifiedArr.slice(0, modifiedArr.length - 1);
+    let modifiedArrWithoutLastRow = modifiedArr.slice(0, modifiedArr.length - 1);
 
     console.log('modifiedArrWithoutLastRow:', modifiedArrWithoutLastRow);
-    console.log('modifiedArr:', modifiedArr);
+    console.log('modifiedArrWithoutLastRow.length - 1:', modifiedArrWithoutLastRow.length - 1);
 
-    for (let j = 0; j < modifiedArr.length - 1; j++) {
-      let innerArr = modifiedArr[j];
-      console.log('innerArr2: ', innerArr);
+    // 4. process left vertical line
+    console.log('4. process left vertical line');
+    for (let j = modifiedArrWithoutLastRow.length - 1; j > -1; j--) {
+      let innerArr = modifiedArrWithoutLastRow[j];
+      console.log('innerArr step 4: ', innerArr);
       result.push(innerArr[0]);
-      result.push(innerArr[1]);
+      innerArr.shift();
+      console.log('innerArr after shift: ', innerArr);
     }
+    console.log('modifiedArrWithoutLastRow after 4: ', modifiedArrWithoutLastRow);
   }
-  console.log(arrWithNumbers[0].toString());
-  console.log(arrWithNumbers[howManyArrs - 1].toString());
+
+  // Do the same process for 2 arrays
 
   console.log('result: ', result);
-
-  // if (arrWithNumbers.length == 2) {
-  //   result.push(...arrWithNumbers[1].reverse());
-  // } else {
-  //   result.push(arrWithNumbers[1][2]);
-  //   result.push(...arrWithNumbers[2].reverse());
-  //   result.push(arrWithNumbers[1][0]);
-  //   result.push(arrWithNumbers[1][1]);
-  // }
   return result;
 }
 

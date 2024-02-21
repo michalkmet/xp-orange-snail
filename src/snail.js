@@ -7,58 +7,48 @@ function snail(arrWithNumbers) {
     return arrWithNumbers[0];
   }
 
-  // 1. first row
-  console.log('1. process first row');
-  result = arrWithNumbers[0];
-  const modifiedArr = arrWithNumbers.slice(1);
-  console.log('modifiedArr after 1 step:', modifiedArr);
+  do {
+    // 1. first row
+    console.log('1. process first row');
+    console.log('arrWithNumbers start: ', arrWithNumbers);
+    result.push(...arrWithNumbers[0]);
+    arrWithNumbers.splice(0, 1);
+    console.log('arrWithNumbers after splice: ', arrWithNumbers);
+    console.log('arrWithNumbers.length: ', arrWithNumbers.length);
+    if (arrWithNumbers.length > 1) {
+      // more than 1 row
+      // 2. do right vertical line
+      console.log('2. right vertical line');
+      for (let i = 0; i < arrWithNumbers.length - 1; i++) {
+        let innerArr = arrWithNumbers[i];
+        console.log('Arr for right vertical: ', innerArr);
+        result.push(innerArr[innerArr.length - 1]);
+        innerArr.pop();
+      }
 
-  if (howManyArrs === 2) {
-    result.push(...arrWithNumbers[howManyArrs - 1].reverse());
-  } else {
-    // 2. process right vertical line
-    console.log('2. right vertical line');
-    for (let i = 0; i < modifiedArr.length - 1; i++) {
-      let innerArr = modifiedArr[i];
-      console.log('Arr for right vertical: ', innerArr);
-      result.push(innerArr[innerArr.length - 1]);
-      innerArr.pop();
+      // 3. reverse row
+      howManyArrs = arrWithNumbers.length;
+      console.log('3. process last row, do reverse');
+      console.log('howManyArrs: ', howManyArrs);
+      result.push(...arrWithNumbers[howManyArrs - 1].reverse());
+      arrWithNumbers.splice(howManyArrs - 1);
+
+      // 4. process left vertical line
+      console.log('4. process left vertical line');
+      for (let j = arrWithNumbers.length - 1; j > -1; j--) {
+        let innerArr = arrWithNumbers[j];
+        console.log('innerArr step 4: ', innerArr);
+        result.push(innerArr[0]);
+        innerArr.shift();
+        console.log('innerArr after shift: ', innerArr);
+      }
+    } else if (arrWithNumbers.length === 1) {
+      result.push(...arrWithNumbers[0].reverse());
+      arrWithNumbers.splice(0);
     }
-
-    howManyArrs = modifiedArr.length;
-
-    // 3. reverse row
-    console.log('3. process last row, do reverse');
-    result.push(...modifiedArr[howManyArrs - 1].reverse());
-    console.log('modifiedArr before splice: ', modifiedArr);
-    let modifiedArrWithoutLastRow = modifiedArr.slice(0, modifiedArr.length - 1);
-
-    console.log('modifiedArrWithoutLastRow:', modifiedArrWithoutLastRow);
-    console.log('modifiedArrWithoutLastRow.length - 1:', modifiedArrWithoutLastRow.length - 1);
-
-    // 4. process left vertical line
-    console.log('4. process left vertical line');
-    for (let j = modifiedArrWithoutLastRow.length - 1; j > -1; j--) {
-      let innerArr = modifiedArrWithoutLastRow[j];
-      console.log('innerArr step 4: ', innerArr);
-      result.push(innerArr[0]);
-      innerArr.shift();
-      console.log('innerArr after shift: ', innerArr);
-    }
-    console.log('modifiedArrWithoutLastRow after 4: ', modifiedArrWithoutLastRow);
-
-    //  2 arrays left - do the first and last row
-    console.log('modifiedArrWithoutLastRow.length:', modifiedArrWithoutLastRow.length);
-    if (modifiedArrWithoutLastRow.length === 2) {
-      result.push(...modifiedArrWithoutLastRow[0]);
-      result.push(...modifiedArrWithoutLastRow[1].reverse());
-    } else {
-      // only one arr left (start with 3 rows)
-      result.push(modifiedArrWithoutLastRow[0][0]);
-    }
-  }
-
-  console.log('result: ', result);
+    console.log('arrWithNumbers end of loop: ', arrWithNumbers);
+    console.log('result: ', result);
+  } while (arrWithNumbers.length != 0);
   return result;
 }
 

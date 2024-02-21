@@ -1,21 +1,11 @@
 function snail(arrWithNumbers) {
-  let result = [];
-
   console.log('arrWithNumbers: ', arrWithNumbers);
 
   if (checkEmptyOr1Element(arrWithNumbers)) {
     return arrWithNumbers[0];
   }
 
-  do {
-    [arrWithNumbers, result] = processFirstRow(arrWithNumbers, result);
-    if (arrWithNumbers.length > 1) {
-      [arrWithNumbers, result] = processSquareOperations(arrWithNumbers, result);
-    } else if (arrWithNumbers.length === 1) {
-      [arrWithNumbers, result] = processLastStep(arrWithNumbers, result);
-    }
-  } while (arrWithNumbers.length != 0);
-  return result;
+  return mainSquareProcessing(arrWithNumbers);
 }
 
 function checkEmptyOr1Element(arrWithNumbers) {
@@ -26,6 +16,19 @@ function checkEmptyOr1Element(arrWithNumbers) {
   if (arrWithNumbers[0].length === 1) {
     return arrWithNumbers[0];
   }
+}
+
+function mainSquareProcessing(arrWithNumbers) {
+  let result = [];
+  do {
+    [arrWithNumbers, result] = processFirstRow(arrWithNumbers, result);
+    if (arrWithNumbers.length > 1) {
+      [arrWithNumbers, result] = processSquareOperations(arrWithNumbers, result);
+    } else if (arrWithNumbers.length === 1) {
+      [arrWithNumbers, result] = processLastStep(arrWithNumbers, result);
+    }
+  } while (arrWithNumbers.length != 0);
+  return result;
 }
 
 function processFirstRow(arrWithNumbers, result) {

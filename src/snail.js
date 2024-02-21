@@ -46,9 +46,17 @@ function snail(arrWithNumbers) {
       console.log('innerArr after shift: ', innerArr);
     }
     console.log('modifiedArrWithoutLastRow after 4: ', modifiedArrWithoutLastRow);
-  }
 
-  // Do the same process for 2 arrays
+    //  2 arrays left - do the first and last row
+    console.log('modifiedArrWithoutLastRow.length:', modifiedArrWithoutLastRow.length);
+    if (modifiedArrWithoutLastRow.length === 2) {
+      result.push(...modifiedArrWithoutLastRow[0]);
+      result.push(...modifiedArrWithoutLastRow[1].reverse());
+    } else {
+      // only one arr left (start with 3 rows)
+      result.push(modifiedArrWithoutLastRow[0][0]);
+    }
+  }
 
   console.log('result: ', result);
   return result;

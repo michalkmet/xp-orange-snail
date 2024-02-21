@@ -63,3 +63,7 @@ Michal Navigator
 Pomodoro 6:
 
 - ✅ DONE UAT2.4 When I pass ([1,2,3,1,2],[4,5,6,4,5],[7,8,9,7,8],[10,11,12,10,11],[13,14,15,13,14]) then I want to see [1,2,3,1,2,5,8,11,14,13,15,14,13,10,7,4,5,6,4,7,10,12,11,8,9]
+
+Pomodoro 7:
+
+- ⚠ TODO Refactor
